@@ -1,15 +1,91 @@
-# Dfds ReactJS components in React
+# DFDS ReactJS components
 
-## Storybook
+## methodology and strategy
 
-https://dfds-frontend.github.io/react-components/?selectedKind=Fonts&selectedStory=default&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook-addon-viewport%2Faddon-panel
+- Semantic HTML
+- Atomic design, bottom up.
+- BEM naming for styling.
+- Eliminate dead CSS. Only needed styling are compiled. The React components import the needed styling.
+- Component based architecture. Each component owns the style-guide definition, styling and unit testing.
+- A css bundle is generated which can be shared to other projects than ReactJS. (markup pattern)
 
-## Demo
+## tech used
 
-- https://codepen.io/kunukn/pen/414587619833622115ad229241a63b1a?editors=0010
-- https://codesandbox.io/s/405yrp7k0
+- Babel 7, ECMAScript 8
+- Webpack, Webpack-dev-server
+- React, Storybook
+- Context Api using the (Redux + Redux thunk) pattern
 
-## Getting started
+## quick start
+
+### view component library
+
+[view storybook](https://dfds-frontend.github.io/react-components)
+
+- git clone/download
+- yarn install
+- yarn storybook
+- open localhost:6006 in a browser
+
+## demo of prototype
+
+- [codesandbox](https://codesandbox.io/s/405yrp7k0)
+- [codepen](https://codepen.io/kunukn/pen/414587619833622115ad229241a63b1a?editors=0010)
+
+## library usage example with npm
+
+```
+import { Button, Icon } from '@dfds-frontend/react-components';
+
+let IconAndButtonExample = () => <div>
+
+  <Icon name='triangle' fill='red' />
+
+  <Button
+     modifiers="call-to-action full-width"
+     icon={<Icon name='chevron'/>}
+     onClick={event=>{}}
+  >
+   Click me
+  </Button>
+
+</div>;
+```
+
+## cdn
+
+https://unpkg.com/@dfds-frontend/react-components/
+
+use
+
+- https://unpkg.com/@dfds-frontend/react-components/dist/dfds.js
+- https://unpkg.com/@dfds-frontend/react-components/dist/dfds.css
+- https://unpkg.com/@dfds-frontend/react-components/dist/icons.min.svg
+- https://unpkg.com/@dfds-frontend/react-components/dist/fonts/font.css (fonts only)
+
+## supported browsers
+
+modern browsers + IE 11
+
+## run tests
+
+- yarn test
+
+## design principles
+
+- simplicity - BEM and composable components
+- overview - component library using storybook with code snippets and responsive web design test using view ports
+- portability - css bundle with icons and font. It's just markup and css classnames
+- availability - CDN: umd bundle, css bundle, svg icons
+- testable - unit tests for all components
+- playability - online demo website
+- off the shelf and conventions - using BEM, component architecture and standard tools (Webpack, React, Storybook)
+
+## documentation
+
+[documentation](/docs/index.md)
+
+## development
 
 - git clone/download
 - yarn install
