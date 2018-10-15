@@ -1,7 +1,7 @@
 {
   "name": "@dfds-frontend/react-components",
   "version": "0.0.1",
-  "description": "Dfds react component",
+  "description": "Dfds ReactJS component",
   "main": "dist/dfds.js",
   "scripts": {
     "start": "webpack-dev-server --color --mode development",
@@ -30,7 +30,7 @@
     "dist"
   ],
   "keywords": [
-    "react",
+    "ReactJS",
     "prototype",
     "atomic design",
     "component library",
