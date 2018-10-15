@@ -30,7 +30,11 @@ class AllIcons extends React.Component {
       let rootIcons = document.querySelector('.root-icons');
       if (!rootIcons) return;
 
-      let ids = [].slice.call(svgIcons.querySelectorAll('[id]'));
+      var allSvgIcons = svgIcons.querySelectorAll('[id]');
+
+      if (!allSvgIcons) return;
+
+      let ids = [].slice.call(allSvgIcons);
       let fragment = document.createDocumentFragment();
       let div;
       for (let element of ids) {
