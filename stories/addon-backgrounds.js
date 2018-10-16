@@ -6,10 +6,10 @@ export const backgrounds = addonBackgrounds([
     value: "#fff",
     default: true
   }, {
-    name: "twitter",
-    value: "#00aced"
+    name: "dfds background",
+    value: "#eef0f1"
   }, {
-    name: "facebook",
-    value: "#3b5998"
+    name: "dfds blue",
+    value: "#1b5786"
   }
 ]);

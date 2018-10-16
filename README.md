@@ -34,22 +34,22 @@
 
 ## library usage example with npm
 
-```
+```jsx
 import { Button, Icon } from '@dfds-frontend/react-components';
 
-let IconAndButtonExample = () => <div>
+let IconAndButtonExample = () => (
+  <div>
+    <Icon name="triangle" fill="red" />
 
-  <Icon name='triangle' fill='red' />
-
-  <Button
-     modifiers="call-to-action full-width"
-     icon={<Icon name='chevron'/>}
-     onClick={event=>{}}
-  >
-   Click me
-  </Button>
-
-</div>;
+    <Button
+      modifiers="call-to-action full-width"
+      icon={<Icon name="chevron" fill="#ed8b00" className="button__icon" />}
+      onClick={event => {}}
+    >
+      Click me
+    </Button>
+  </div>
+);
 ```
 
 ## cdn
