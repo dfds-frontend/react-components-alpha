@@ -1,16 +1,8 @@
 import { getJsonAsync, postJsonAsync, sleep } from 'src/utils';
 
-export const actionTypes = {
-    LOADDATA_STARTED: 'LOADDATA_STARTED',
-    LOADDATA_SUCCEEDED: 'LOADDATA_SUCCEEDED',
-    LOADDATA_FAILED: 'LOADDATA_FAILED',
-};
-
-let {
-    LOADDATA_STARTED,
-    LOADDATA_SUCCEEDED,
-    LOADDATA_FAILED,
-} = actionTypes;
+export const LOADDATA_STARTED = 'LOADDATA_STARTED';
+export const LOADDATA_SUCCEEDED = 'LOADDATA_SUCCEEDED';
+export const LOADDATA_FAILED = 'LOADDATA_FAILED';
 
 export async function loadData(appState, url) {
     try {
