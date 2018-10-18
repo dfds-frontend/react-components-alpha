@@ -29,8 +29,8 @@
 
 ## demo of prototype
 
-- [codesandbox](https://codesandbox.io/s/405yrp7k0)
-- [codepen](https://codepen.io/kunukn/pen/414587619833622115ad229241a63b1a?editors=0010)
+- [codesandbox](https://codesandbox.io/s/405yrp7k0) npm modules
+- [codepen](https://codepen.io/kunukn/pen/414587619833622115ad229241a63b1a?editors=0010) cdn resource
 
 ## library usage example with npm
 
