@@ -28,6 +28,14 @@ module.exports = (env = {}, argv = {}) => {
 
       minimizer: [
         isProd && new UglifyJsPlugin({
+          uglifyOptions: {
+            compress: {
+                drop_console: true,
+            },
+            output: {
+                comments: false,
+            },
+          },
           cache: true,
           parallel: true,
           sourceMap: true,
