@@ -1,6 +1,6 @@
 {
   "name": "@dfds-frontend/react-components",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Dfds ReactJS component",
   "main": "dist/dfds.js",
   "scripts": {
@@ -62,7 +62,7 @@
     "@babel/preset-react": "^7.0.0",
     "@babel/runtime": "^7.1.2",
     "@dfds-frontend/colors": "^0.0.1",
-    "@dfds-frontend/fonts": "0.0.1",
+    "@dfds-frontend/fonts": "0.0.2",
     "@dfds-frontend/icons": "0.0.1",
     "@storybook/addon-actions": "^3.4.11",
     "@storybook/addon-backgrounds": "^3.4.11",
