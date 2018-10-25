@@ -10,12 +10,9 @@ import Button from 'components/molecules/Button/Button';
 
 const loadIcons = icons.load;
 
-const Hello = () => 'Hello';
-
 export {
     loadIcons,
     Button, 
     Icon,
-    DataLoader,
-    Hello
+    DataLoader
 }
