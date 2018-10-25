@@ -1,3 +1,5 @@
+import React from 'react';
+
 import 'components/quarks/_main.scss';
 //import '@dfds-frontend/fonts/main/font.css'; // does not work
 import icons from '@dfds-frontend/icons';
@@ -8,11 +10,12 @@ import Button from 'components/molecules/Button/Button';
 
 const loadIcons = icons.load;
 
-//console.log(!!loadIcons, !!Button, !!Icon, !!DataLoader);
+const Hello = () => 'Hello';
 
 export {
     loadIcons,
     Button, 
     Icon,
-    DataLoader
+    DataLoader,
+    Hello
 }
