@@ -1,4 +1,7 @@
 export default async function getJsonAsync(url) {
     const response = await fetch(url);
-    return await response.json();
+
+    let json = await response.json();
+
+    return { data: json, status: response.status };
 }

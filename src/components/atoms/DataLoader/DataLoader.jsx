@@ -4,17 +4,17 @@ import { getJsonAsync } from 'src/utils';
 export default class DataLoader extends React.Component {
   static propTypes = {
     url: PropTypes.string,
-    render: PropTypes.func.isRequired,
+    render: PropTypes.func.isRequired
   };
 
   static defaultProps = {
-    loadOnMount: true,
+    loadOnMount: true
   };
 
   state = {
     error: null,
     data: null,
-    isLoading: false,
+    isLoading: false
   };
 
   reload = () => {
@@ -28,7 +28,7 @@ export default class DataLoader extends React.Component {
         ...this.state,
         url: this.props.url,
         loadOnMount: this.props.loadOnMount,
-        reload: this.reload,
+        reload: this.reload
       })
     );
   }
@@ -38,18 +38,21 @@ export default class DataLoader extends React.Component {
     if (!this.props.render) return;
 
     this.setState({
-      isLoading: true,
+      isLoading: true
     });
 
     try {
+      let { data, status } = await getJsonAsync(this.props.url);
+
       this.setState({
-        data: await getJsonAsync(this.props.url, console.log.bind(console)),
+        data,
         isLoading: false,
+        hasError: status >= 400
       });
     } catch (exception) {
       this.setState({
         error: exception + '',
-        isLoading: false,
+        isLoading: false
       });
     }
   };

@@ -8,5 +8,7 @@ export default async function postJsonAsync(url, options) {
         body: JSON.stringify(options),
     });
 
-    return await response.json();
+    let json = await response.json();
+
+    return { data: json, status: response.status };
 }
