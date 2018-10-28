@@ -1,12 +1,13 @@
 import './app.scss';
 
-import React, {lazy, Suspense, Component} from 'react';
+import React, {Component} from 'react';
 import { AppContext } from 'src/contexts';
 import { appReducer } from 'src/reducers';
 import { HomePage } from 'components';
 
 const isDevelopmentEnvironment = process.env.NODE_ENV === 'development';
 const isProductionEnvironment = process.env.NODE_ENV === 'production';
+
 
 /**
  * Similar to Redux Thunk
@@ -21,7 +22,7 @@ function appDispatchResolver(app, action) {
   }
 }
 
-export default class App extends React.Component {
+export default class App extends Component {
   constructor(props) {
     super(props);
 

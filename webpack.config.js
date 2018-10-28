@@ -7,16 +7,17 @@ const CleanWebpackPlugin = require("clean-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const package = require("./package.json");
+const webpack = require('webpack');
+const package = require('./package.json');
 
-const IsWebpackDevServer = /webpack-dev-server/.test(
-  process.env.npm_lifecycle_script
-);
+const IsWebpackDevServer = /webpack-dev-server/.test(process.env.npm_lifecycle_script);
 
 module.exports = (env = {}, argv = {}) => {
   const isProd = argv.mode === "production";
 
-  console.log("***", isProd ? "prod" : "dev", "***");
+  console.log("***", isProd
+    ? "prod"
+    : "dev", "***");
 
   let prodEntry = "./src/production-entry";
   let devEntry = "./src/Bootstrapper";
@@ -30,18 +31,18 @@ module.exports = (env = {}, argv = {}) => {
         isProd && new UglifyJsPlugin({
           uglifyOptions: {
             compress: {
-                drop_console: true,
+              drop_console: true
             },
             output: {
-                comments: false,
-            },
+              comments: false
+            }
           },
           cache: true,
           parallel: true,
           sourceMap: true,
           extractComments: true
         }),
-        isProd && new OptimizeCSSAssetsPlugin({}),
+        isProd && new OptimizeCSSAssetsPlugin({})
       ].filter(Boolean),
 
       /*
@@ -51,8 +52,11 @@ module.exports = (env = {}, argv = {}) => {
     },
     entry: {
       //      vendor: Object.keys(package.dependencies),
-      dfds: isProd ? [prodEntry] : [devEntry],
-      //ThirdPartyStylings: ['./src/third-party-stylings/example-of-third-party-styling.scss'],
+      dfds: isProd
+        ? [prodEntry]
+        : [devEntry],
+      // ThirdPartyStylings:
+      // ['./src/third-party-stylings/example-of-third-party-styling.scss'],
     },
     output: {
       path: path.resolve(__dirname, "dist"),
@@ -64,8 +68,22 @@ module.exports = (env = {}, argv = {}) => {
     },
     devServer: {
       port: 6005,
-      contentBase: path.join(__dirname, ""),
-      open: true
+      contentBase: path.join(__dirname, ''),
+      publicPath: '/',
+      open: true,
+      hot: true,
+      disableHostCheck: true,
+      watchContentBase: true,
+      historyApiFallback: true, // react-router
+      proxy: {
+        '/api': {
+          target: 'http://localhost:5555',
+          secure: false,
+          pathRewrite: {
+            '^/api': ''
+          }
+        }
+      }
     },
     module: {
       rules: [
@@ -80,59 +98,56 @@ module.exports = (env = {}, argv = {}) => {
               }
             }
           ]
-        },
-        {
+        }, {
           test: /\.(js|jsx)$/,
           include: path.join(__dirname, "src"),
           use: {
             loader: "babel-loader"
           }
-        },
-        {
+        }, {
           test: /font\.css$/,
           include: [path.join(__dirname, "node_modules/@dfds-frontend/fonts")],
           use: [
             {
-              loader: isProd ? MiniCssExtractPlugin.loader : "style-loader",
-              options: isProd ? {} : {}
-            },
-            {
+              loader: isProd
+                ? MiniCssExtractPlugin.loader
+                : "style-loader",
+              options: isProd
+                ? {}
+                : {}
+            }, {
               loader: "css-loader",
               options: {
-                minimize:
-                  isProd ||
-                  {
-                    /* CSSNano Options */
-                  }
+                minimize: isProd || {
+                  /* CSSNano Options */
+                }
               }
             }
           ]
-        },
-        {
+        }, {
           test: /\.scss$/,
           include: [path.join(__dirname, "src")],
           use: [
             {
-              loader: isProd ? MiniCssExtractPlugin.loader : "style-loader",
-              options: isProd ? {} : {}
-            },
-            {
+              loader: isProd
+                ? MiniCssExtractPlugin.loader
+                : "style-loader",
+              options: isProd
+                ? {}
+                : {}
+            }, {
               loader: "css-loader",
               options: {
-                minimize:
-                  isProd ||
-                  {
-                    /* CSSNano Options */
-                  }
+                minimize: isProd || {
+                  /* CSSNano Options */
+                }
               }
-            },
-            {
+            }, {
               loader: "postcss-loader",
               options: {
                 sourceMap: true
               }
-            },
-            {
+            }, {
               loader: "sass-loader",
               options: {
                 data: '@import "_helpers.scss";',
@@ -158,7 +173,10 @@ module.exports = (env = {}, argv = {}) => {
         },*/
         {
           test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
-          include: [path.join(__dirname, "fonts"), path.join(__dirname, "node_modules/@dfds-frontend/fonts")],
+          include: [
+            path.join(__dirname, "fonts"),
+            path.join(__dirname, "node_modules/@dfds-frontend/fonts")
+          ],
           use: [
             {
               loader: "file-loader",
@@ -169,8 +187,7 @@ module.exports = (env = {}, argv = {}) => {
               }
             }
           ]
-        },
-        {
+        }, {
           test: /\.(svg)(\?v=\d+\.\d+\.\d+)?$/,
           include: [path.join(__dirname, "node_modules/@dfds-frontend/icons")],
           use: [
@@ -187,43 +204,31 @@ module.exports = (env = {}, argv = {}) => {
     },
     plugins: [
       isProd && new CleanWebpackPlugin("dist", {}),
-      new MiniCssExtractPlugin({
-        filename: "[name].css",
-        chunkFilename: "[id].css"
-      }),
-      new HtmlWebpackPlugin({
-        compile: false,
-        inject: true,
-        hash: true,
-        template: "src/index.html",
-        filename: "index.html"
-      }),
+      new MiniCssExtractPlugin({filename: "[name].css", chunkFilename: "[id].css"}),
+      new HtmlWebpackPlugin({compile: false, inject: true, hash: true, template: "src/index.html", filename: "index.html"}),
       new WebpackMd5Hash(),
-      isProd &&
-        new CopyWebpackPlugin(
-          [
-            {
-              from: "node_modules/@dfds-frontend/fonts/main/font.css",
-              to: "fonts/font.css"
-            },
-            {
-              from: "node_modules/@dfds-frontend/icons/main/icons.min.svg",
-              to: "icons.min.svg"
-            },
-            {
-              from: "node_modules/@dfds-frontend/icons/main/icons.svg",
-              to: "icons.svg"
-            }
-          ],
-          {}
-        )
+      !isProd && new webpack.HotModuleReplacementPlugin(),
+      isProd && new CopyWebpackPlugin([
+        {
+          from: "node_modules/@dfds-frontend/fonts/main/font.css",
+          to: "fonts/font.css"
+        }, {
+          from: "node_modules/@dfds-frontend/icons/main/icons.min.svg",
+          to: "icons.min.svg"
+        }, {
+          from: "node_modules/@dfds-frontend/icons/main/icons.svg",
+          to: "icons.svg"
+        }
+      ], {})
     ].filter(Boolean),
     resolve: {
-      extensions: [".js", ".jsx", ".css", ".scss"],
+      extensions: [
+        ".js", ".jsx", ".css", ".scss"
+      ],
       alias: {
         root: __dirname,
         src: path.resolve(__dirname, "src"),
-        components: path.resolve(__dirname, "src/components"),
+        components: path.resolve(__dirname, "src/components")
       }
     },
     externals: {}
