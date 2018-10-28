@@ -1,6 +1,6 @@
 import './app.scss';
 
-import React from 'react';
+import React, {lazy, Suspense, Component} from 'react';
 import { AppContext } from 'src/contexts';
 import { appReducer } from 'src/reducers';
 import { HomePage } from 'components';

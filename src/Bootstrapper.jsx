@@ -1,7 +1,7 @@
 import 'components/quarks/_main.scss';
 import '@dfds-frontend/fonts/main/font.css';
 import '@dfds-frontend/icons/main/icons.svg'; // make it available as resource at url: /icons.svg
-import React from 'react';
+import React, {StrictMode} from 'react';
 import ReactDOM from 'react-dom';
 import App from 'components/app';
 import 'whatwg-fetch';
@@ -15,4 +15,5 @@ if (typeof window !== 'undefined' && !window.Promise) {
 
 testES8();
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+  <StrictMode><App/></StrictMode>, document.getElementById('root'));
