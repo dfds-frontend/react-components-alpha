@@ -8,7 +8,7 @@ let onClick = event => {
   console.log('clicked button ' + event.currentTarget);
 };
 
-//const LazyIcon = lazy(() => import ('components/atoms/Icon/Icon'));
+const LazyIcon = lazy(() => import ('components/atoms/Icon/Icon'));
 
 class HomePage extends Component {
   onLoadClick = () => this
@@ -18,12 +18,10 @@ class HomePage extends Component {
   render() {
     return (
       <div title="yarn storybook">
-{/*
-  <Suspense fallback={<div> Loading ...</div>}>
-    <LazyIcon name="chevron"/>
-  </Suspense>
 
-*/}
+      <Suspense fallback={<div> Loading ...</div>}>
+        <LazyIcon name="logistics-truck"/>
+      </Suspense>
 
         <pre>{JSON.stringify(this.props.appState, null, 2)}</pre>
 
