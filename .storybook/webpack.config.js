@@ -16,19 +16,6 @@ const root = path.resolve(__dirname, "../");
 module.exports = (baseConfig, env, defaultConfig) => {
 	// Extend defaultConfig as you need.
 
-	// defaultConfig.module.rules.push({
-	// 	test: /font\.css$/,
-	// 	include: ["root/node_modules/@dfds-frontend/fonts"],
-	// 	use: [
-	// 		{
-	// 			loader: "style-loader",
-	// 		},
-	// 		{
-	// 			loader: "css-loader",
-	// 		}
-	// 	]
-	// });
-
 	defaultConfig.module.rules.push({
 		test: /\.scss$/,
 		include: [root],
@@ -87,7 +74,7 @@ module.exports = (baseConfig, env, defaultConfig) => {
 */
 	defaultConfig.module.rules.push({
 		test: /\.(svg)(\?v=\d+\.\d+\.\d+)?$/,
-		include: ["root/node_modules/@dfds-frontend/icons"],
+		exclude: [/node_modules/],
 		use: [
 			{
 				loader: "file-loader",
