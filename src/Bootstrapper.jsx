@@ -1,6 +1,6 @@
 import 'components/quarks/_main.scss';
 import 'src/icon-system/icons.svg';
-import React, {StrictMode} from 'react';
+import React, { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
 import App from 'components/app';
 import 'whatwg-fetch';
@@ -15,4 +15,8 @@ if (typeof window !== 'undefined' && !window.Promise) {
 testES8();
 
 ReactDOM.render(
-  <StrictMode><App/></StrictMode>, document.getElementById('root'));
+  <StrictMode>
+    <App />
+  </StrictMode>,
+  document.getElementById('root')
+);

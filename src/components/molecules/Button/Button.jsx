@@ -2,20 +2,14 @@ import './button.scss';
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
+import { getModifiersArray } from 'src/utils';
 
 export default function Button({ children, onClick, disabled, className, modifiers, type, icon }) {
-  const modifiersArray = modifiers
-    .trim()
-    .split(' ')
-    .map(m => m.trim())
-    .filter(Boolean);
-  const cssModifiers = modifiersArray.map(m => `button--${m}`);
-
   return (
     <button
       className={cx(
         'button',
-        cssModifiers,
+        getModifiersArray('button', modifiers),
         {
           'button--with-icon': !!icon,
         },
