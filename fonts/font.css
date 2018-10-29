@@ -1,0 +1,27 @@
+@font-face {
+  font-display: swap;
+  font-family: DFDS;
+  src: url('./DFDS-Regular.woff2') format('woff2'), url('./DFDS-Regular.woff') format('woff');
+  font-weight: normal;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: DFDS;
+  src: url('./DFDS-Bold.woff2') format('woff2'), url('./DFDS-Bold.woff') format('woff');
+  font-weight: bold;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: DFDS;
+  src: url('./DFDS-Light.woff2') format('woff2'), url('./DFDS-Light.woff') format('woff');
+  font-weight: 100;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: DFDS;
+  src: url('./DFDS-Italic.woff2') format('woff2'), url('./DFDS-Italic.woff') format('woff');
+  font-style: italic;
+}

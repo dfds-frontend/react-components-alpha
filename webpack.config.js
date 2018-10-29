@@ -210,7 +210,7 @@ module.exports = (env = {}, argv = {}) => {
       !isProd && new webpack.HotModuleReplacementPlugin(),
       isProd && new CopyWebpackPlugin([
         {
-          from: "node_modules/@dfds-frontend/fonts/main/font.css",
+          from: 'fonts/font.css',
           to: "fonts/font.css"
         }, {
           from: "node_modules/@dfds-frontend/icons/main/icons.min.svg",

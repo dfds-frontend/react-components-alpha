@@ -1,7 +1,7 @@
 import React from 'react';
 
-import 'components/quarks/_main.scss';
-//import '@dfds-frontend/fonts/main/font.css'; // does not work
+import 'components/quarks/styles';
+
 import icons from '@dfds-frontend/icons';
 
 import DataLoader from 'components/atoms/DataLoader/DataLoader';

@@ -1,3 +1,4 @@
+import 'components/quarks/styles';
 import './app.scss';
 
 import React, {Component} from 'react';

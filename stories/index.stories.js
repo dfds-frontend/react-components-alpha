@@ -3,8 +3,7 @@
 */
 
 import React from 'react';
-import 'components/quarks/_main.scss';
-import '@dfds-frontend/fonts/main/font.css';
+import 'components/quarks/styles';
 import '@dfds-frontend/icons/main/icons.svg';
 import icons from '@dfds-frontend/icons';
 
