@@ -4,8 +4,8 @@
 
 import React from 'react';
 import 'components/quarks/styles';
-import '@dfds-frontend/icons/main/icons.svg';
-import icons from '@dfds-frontend/icons';
+import 'src/icon-system/icons.svg';
+import loadIcons from 'src/icon-system/loadIcons';
 
 import FontsStory from './Fonts.story';
 import ColorsStory from './Colors.story';
@@ -13,8 +13,8 @@ import IconStory from 'components/atoms/Icon/Icon.story';
 import ButtonStory from 'components/molecules/Button/Button.story';
 
 // for github pages
-icons.load({path: 'https://unpkg.com/@dfds-frontend/react-components/dist/icons.min.svg'});
-//icons.load();
+loadIcons({path: 'https://unpkg.com/@dfds-frontend/react-components/dist/icons.min.svg'});
+//loadIcons(); // localhost
 
 FontsStory();
 ColorsStory();

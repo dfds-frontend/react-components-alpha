@@ -65,7 +65,6 @@
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
     "@babel/runtime": "^7.1.2",
-    "@dfds-frontend/icons": "0.0.1",
     "@storybook/addon-actions": "^3.4.11",
     "@storybook/addon-backgrounds": "^3.4.11",
     "@storybook/addon-links": "^3.4.11",

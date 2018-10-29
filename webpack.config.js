@@ -105,26 +105,6 @@ module.exports = (env = {}, argv = {}) => {
             loader: "babel-loader"
           }
         }, {
-          test: /font\.css$/,
-          include: [path.join(__dirname, "node_modules/@dfds-frontend/fonts")],
-          use: [
-            {
-              loader: isProd
-                ? MiniCssExtractPlugin.loader
-                : "style-loader",
-              options: isProd
-                ? {}
-                : {}
-            }, {
-              loader: "css-loader",
-              options: {
-                minimize: isProd || {
-                  /* CSSNano Options */
-                }
-              }
-            }
-          ]
-        }, {
           test: /\.scss$/,
           include: [path.join(__dirname, "src")],
           use: [
@@ -174,8 +154,7 @@ module.exports = (env = {}, argv = {}) => {
         {
           test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
           include: [
-            path.join(__dirname, "fonts"),
-            path.join(__dirname, "node_modules/@dfds-frontend/fonts")
+            path.join(__dirname, "fonts")
           ],
           use: [
             {
@@ -183,13 +162,12 @@ module.exports = (env = {}, argv = {}) => {
               options: {
                 name: "fonts/[name].[ext]",
                 mimetype: "application/font-woff"
-                // outputPath: 'fonts/', publicPath: '../', useRelativePath: isProd
               }
             }
           ]
         }, {
           test: /\.(svg)(\?v=\d+\.\d+\.\d+)?$/,
-          include: [path.join(__dirname, "node_modules/@dfds-frontend/icons")],
+          include: [path.resolve(__dirname, 'src/icon-system')],
           use: [
             {
               loader: "file-loader",
@@ -211,13 +189,13 @@ module.exports = (env = {}, argv = {}) => {
       isProd && new CopyWebpackPlugin([
         {
           from: 'fonts/font.css',
-          to: "fonts/font.css"
+          to: 'fonts/font.css'
         }, {
-          from: "node_modules/@dfds-frontend/icons/main/icons.min.svg",
-          to: "icons.min.svg"
+          from: 'src/icon-system/icons.min.svg',
+          to: 'icons.min.svg'
         }, {
-          from: "node_modules/@dfds-frontend/icons/main/icons.svg",
-          to: "icons.svg"
+          from: 'src/icon-system/icons.svg',
+          to: 'icons.svg'
         }
       ], {})
     ].filter(Boolean),
