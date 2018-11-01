@@ -73,7 +73,7 @@ module.exports = (env = {}, argv = {}) => {
       historyApiFallback: true, // react-router
       proxy: {
         '/api': {
-          target: 'http://localhost:5555',
+          target: 'http://localhost:6666',
           secure: false,
           pathRewrite: {
             '^/api': '',
@@ -229,22 +229,20 @@ module.exports = (env = {}, argv = {}) => {
     externals: {},
   };
 
-  if (isProd) {
-    config.externals['react'] = {
-      root: 'React',
-      commonjs2: 'react',
-      commonjs: 'react',
-      amd: 'react',
-      umd: 'react',
-    };
-    config.externals['react-dom'] = {
-      root: 'ReactDOM',
-      commonjs2: 'react-dom',
-      commonjs: 'react-dom',
-      amd: 'react-dom',
-      umd: 'react-dom',
-    };
-  }
+  config.externals['react'] = {
+    root: 'React',
+    commonjs2: 'react',
+    commonjs: 'react',
+    amd: 'react',
+    umd: 'react',
+  };
+  config.externals['react-dom'] = {
+    root: 'ReactDOM',
+    commonjs2: 'react-dom',
+    commonjs: 'react-dom',
+    amd: 'react-dom',
+    umd: 'react-dom',
+  };
 
   return config;
 };

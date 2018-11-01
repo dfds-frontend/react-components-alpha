@@ -23,7 +23,7 @@
     "deploy-storybook-from-out": "npm run deploy-storybook -- --existing-output-dir=.out",
     "sm": "source-map-explorer dist/dfds.js",
     "build-deploy-storybook": "npm run build-storybook-to-out && npm run deploy-storybook-from-out",
-    "dummy-api": "node server/apiServer.js --port 5555",
+    "dummy-api": "node server/apiServer.js --port 6666",
     "rebuild-node-sass": "npm rebuild node-sass"
   },
   "repository": {
