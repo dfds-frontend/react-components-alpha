@@ -1,2 +1,28 @@
 .icon {
+	display: block;
+
+	&--no-click {
+		pointer-events: none;
+	}
+	&--inline {
+		display: inline;
+	}
+	&--inline-block {
+		display: inline-block;
+	}
+	&--move-left {
+		margin-right: 1rem;
+	}
+	&--move-right {
+		margin-left: 1rem;
+	}
+	&--mirror-y {
+		transform: scaleX(-1);
+	}
+	&--mirror-x {
+		transform: scaleY(-1);
+	}
+	&--mirror-x-y {
+		transform: scaleX(-1) scaleY(-1);
+	}
 }
