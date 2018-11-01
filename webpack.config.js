@@ -71,12 +71,18 @@ module.exports = (env = {}, argv = {}) => {
       disableHostCheck: true,
       watchContentBase: true,
       historyApiFallback: true, // react-router
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
+        'Access-Control-Allow-Headers': 'X-Requested-With, content-type, Authorization',
+      },
       proxy: {
         '/api': {
           target: 'http://localhost:6666',
           secure: false,
-          pathRewrite: {
-            '^/api': '',
+          pathRewrite: { '^/api': '' },
+          bypass: function(req, res, proxyOptions) {
+            console.log('******************', req.url);
           },
         },
       },
