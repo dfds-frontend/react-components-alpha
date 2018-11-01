@@ -18,7 +18,7 @@ module.exports = (env = {}, argv = {}) => {
   console.log('***', isProd ? 'prod' : 'dev', '***');
 
   let prodEntry = './src/production-entry';
-  let devEntry = './src/Bootstrapper';
+  let devEntry = './src/RenderDevelopment';
 
   let config = {
     devtool: 'source-map',

@@ -1,5 +1,6 @@
 import React from 'react';
 
+import './Bootstrapper';
 import 'components/quarks/styles';
 
 import loadIcons from 'src/icon-system/loadIcons';
