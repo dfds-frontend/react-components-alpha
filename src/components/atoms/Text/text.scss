@@ -1,0 +1,8 @@
+.text {
+    &--alert {
+        color: $color-error;
+    }
+    &--uppercase {
+        text-transform: uppercase;
+    }
+}

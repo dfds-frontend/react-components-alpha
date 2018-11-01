@@ -1,0 +1,19 @@
+.link {
+
+    &--normal {
+        font-weight: normal;
+    }
+
+    &--light {
+        color: $color-white;
+        &:hover,
+        &:focus {
+            color: $color-white;
+        }
+    }
+    &--center-content {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+}

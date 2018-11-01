@@ -1,14 +1,13 @@
 import 'components/quarks/styles';
 import './app.scss';
 
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { AppContext } from 'src/contexts';
 import { appReducer } from 'src/reducers';
-import { HomePage } from 'components';
+import { HomePage } from 'components/pages';
 
-const isDevelopmentEnvironment = process.env.NODE_ENV === 'development';
-const isProductionEnvironment = process.env.NODE_ENV === 'production';
-
+// const isDevelopmentEnvironment = process.env.NODE_ENV === 'development';
+// const isProductionEnvironment = process.env.NODE_ENV === 'production';
 
 /**
  * Similar to Redux Thunk
@@ -18,7 +17,7 @@ function appDispatchResolver(app, action) {
     action(app.dispatch, app.getState);
   } else {
     app.setState(prevState => ({
-      values: appReducer(prevState.values, action)
+      values: appReducer(prevState.values, action),
     }));
   }
 }
@@ -29,9 +28,9 @@ export default class App extends Component {
 
     this.state = {
       values: {
-        test: 'test'
+        test: 'test',
       },
-      dispatch: this.dispatch
+      dispatch: this.dispatch,
     };
   }
 

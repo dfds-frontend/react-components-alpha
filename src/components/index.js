@@ -1,11 +1,6 @@
-import {Icon, DataLoader} from './atoms';
-import {Button} from './molecules';
-import {AboutPage, HomePage} from './pages';
+// OBS: everything imported here are added to the app bundle even if not used in the app
 
-export {
-  DataLoader,
-  Icon,
-  Button,
-  AboutPage,
-  HomePage
-}
+import { Icon, DataLoader, Text, Link } from './atoms';
+import { Button } from './molecules';
+
+export { DataLoader, Icon, Button, Text, Link };
