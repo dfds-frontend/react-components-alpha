@@ -1,19 +1,27 @@
 .link {
+  font-size: 1.6rem;
+  text-decoration: none;
+  font-weight: bold;
+  color: $color-link-blue;
 
-    &--normal {
-        font-weight: normal;
-    }
+  &:hover {
+    text-decoration: underline;
+  }
 
-    &--light {
-        color: $color-white;
-        &:hover,
-        &:focus {
-            color: $color-white;
-        }
+  &--normal {
+    font-weight: normal;
+  }
+
+  &--light {
+    color: $color-white;
+    &:hover,
+    &:focus {
+      color: $color-white;
     }
-    &--center-content {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-    }
+  }
+  &--center-content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
 }

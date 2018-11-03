@@ -11,6 +11,8 @@ import FontsStory from './Fonts.story';
 import ColorsStory from './Colors.story';
 import IconStory from 'components/atoms/Icon/Icon.story';
 import ButtonStory from 'components/atoms/Button/Button.story';
+import TextStory from 'components/atoms/Text/Text.story';
+import LinkStory from 'components/atoms/Link/Link.story';
 
 // for github pages
 loadIcons({ path: 'https://unpkg.com/@dfds-frontend/react-components/dist/icons.min.svg' });
@@ -20,3 +22,5 @@ FontsStory();
 ColorsStory();
 IconStory();
 ButtonStory();
+TextStory();
+LinkStory();

@@ -4,23 +4,21 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { getModifiersArray } from 'src/utils';
 
-const Icon = ({ children, name, width, height, fill, modifiers, className }) => {
+const Icon = ({ children, name, width, height, fill, modifiers, mod, className }) => {
   const content = children || name;
 
   if (!content) {
     return null;
   }
 
-  let url = '#' + content.trim();
-
   return (
     <svg
       fill={fill}
       width={width}
       height={height}
-      className={cx('icon', getModifiersArray('icon', modifiers), className)}
+      className={cx('icon', getModifiersArray('icon', mod || modifiers), className)}
     >
-      <use xlinkHref={url} />
+      <use xlinkHref={'#' + content.trim()} />
     </svg>
   );
 };
@@ -34,6 +32,7 @@ Icon.propTypes = {
   fill: PropTypes.string,
   className: PropTypes.string,
   modifiers: PropTypes.string,
+  mod: PropTypes.string,
 };
 
 Icon.defaultProps = {

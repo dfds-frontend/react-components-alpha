@@ -45,13 +45,13 @@ usage description here
 ## React
 
 ~~~jsx
-<Button onClick={action('clicked')} modifiers="center-center">
-  Click me <Icon name="chevron" modifiers="move-right " />
+<Button onClick={action('clicked')} mod="center-center">
+  Click me <Icon name="chevron" mod="move-right " />
 </Button>
 ~~~
       `)(() => (
-        <Button {...props} onClick={action('clicked')} modifiers="center-center">
-          Click me <Icon name="chevron" modifiers="move-right " />
+        <Button {...props} onClick={action('clicked')} mod="center-center">
+          Click me <Icon name="chevron" mod="move-right " />
         </Button>
       ))
     )
@@ -66,14 +66,14 @@ usage description here
 
 ~~~jsx
 <Button
-  modifiers='call-to-action'
+  mod='cta'
   onClick={this.onClick}
 >
   Click me
 </Button>
 ~~~
       `)(() => (
-        <Button {...props} modifiers="call-to-action" onClick={action('clicked')}>
+        <Button {...props} mod="cta" onClick={action('clicked')}>
           Click me
         </Button>
       ))
@@ -88,13 +88,13 @@ usage description here
 ## React
 
 ~~~jsx
-<Button modifiers="call-to-action center-center" onClick={action('clicked')}>
-  Click me <Icon name="chevron" modifiers="move-right" />
+<Button mod="cta center-center" onClick={action('clicked')}>
+  Click me <Icon name="chevron" mod="move-right" />
 </Button>
 ~~~
       `)(() => (
-        <Button {...props} modifiers="call-to-action center-center" onClick={action('clicked')}>
-          Click me <Icon name="chevron" modifiers="move-right" />
+        <Button {...props} mod="cta center-center" onClick={action('clicked')}>
+          Click me <Icon name="chevron" mod="move-right" />
         </Button>
       ))
     )
@@ -134,14 +134,14 @@ usage description here
 ~~~jsx
 <Button
   disabled
-  modifiers='call-to-action'
+  mod='cta'
   onClick={this.onClick}
 >
   Click me
 </Button>
 ~~~
       `)(() => (
-        <Button {...props} disabled modifiers="call-to-action" onClick={action('clicked')}>
+        <Button {...props} disabled mod="cta" onClick={action('clicked')}>
           Click me
         </Button>
       ))

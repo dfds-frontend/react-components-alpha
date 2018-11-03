@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { getModifiersArray } from 'src/utils';
 
-export default function Button({ children, onClick, disabled, className, modifiers, type }) {
+export default function Button({ children, onClick, disabled, className, modifiers, mod, type }) {
   return (
     <button
-      className={cx('button', getModifiersArray('button', modifiers), className)}
+      className={cx('button', getModifiersArray('button', mod || modifiers), className)}
       onClick={onClick}
       type={type}
       disabled={disabled}
@@ -22,9 +22,9 @@ Button.propTypes = {
   name: PropTypes.string,
   className: PropTypes.string,
   modifiers: PropTypes.string,
+  mod: PropTypes.string,
 };
 Button.defaultProps = {
   className: '',
-  modifiers: '',
   type: 'button',
 };

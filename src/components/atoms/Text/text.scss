@@ -1,8 +1,10 @@
 .text {
-    &--alert {
-        color: $color-error;
-    }
-    &--uppercase {
-        text-transform: uppercase;
-    }
+  font-size: 1.6rem;
+
+  &--alert {
+    color: $color-error;
+  }
+  &--uppercase {
+    text-transform: uppercase;
+  }
 }
