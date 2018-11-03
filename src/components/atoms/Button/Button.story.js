@@ -45,44 +45,16 @@ usage description here
 ## React
 
 ~~~jsx
-<Button
-  icon={<Icon name="chevron" />}
-  onClick={this.onClick}
->
-  Click me
+<Button onClick={action('clicked')} modifiers="center-center">
+  Click me <Icon name="chevron" modifiers="move-right " />
 </Button>
 ~~~
       `)(() => (
-        <Button {...props} icon={<Icon name="chevron" />} onClick={action('clicked')}>
-          Click me
+        <Button {...props} onClick={action('clicked')} modifiers="center-center">
+          Click me <Icon name="chevron" modifiers="move-right " />
         </Button>
       ))
     )
-    .add(
-      'default with icon and light border',
-      withMarkdownNotes(`
-# Button call to action
-
-usage description here
-
-## React
-
-~~~jsx
-<Button
-  modifiers="light-border"  
-  icon={<Icon name="chevron" />}
-  onClick={this.onClick}
->
-  Click me
-</Button>
-~~~
-      `)(() => (
-        <Button {...props} modifiers="light-border" icon={<Icon name="chevron" />} onClick={action('clicked')}>
-          Click me
-        </Button>
-      ))
-    )
-
     .add(
       'call to action',
       withMarkdownNotes(`
@@ -116,17 +88,13 @@ usage description here
 ## React
 
 ~~~jsx
-<Button
-  modifiers='call-to-action'
-  icon={<Icon name="chevron" />}
-  onClick={this.onClick}
->
-  Click me
+<Button modifiers="call-to-action center-center" onClick={action('clicked')}>
+  Click me <Icon name="chevron" modifiers="move-right" />
 </Button>
 ~~~
       `)(() => (
-        <Button {...props} icon={<Icon name="chevron" />} modifiers="call-to-action" onClick={action('clicked')}>
-          Click me
+        <Button {...props} modifiers="call-to-action center-center" onClick={action('clicked')}>
+          Click me <Icon name="chevron" modifiers="move-right" />
         </Button>
       ))
     )
@@ -142,21 +110,20 @@ usage description here
 ~~~jsx
 <Button
   disabled
-  icon={<Icon name="chevron" />}
   onClick={this.onClick}
 >
   Click me
 </Button>
 ~~~
       `)(() => (
-        <Button {...props} icon={<Icon name="chevron" />} disabled onClick={action('clicked')}>
+        <Button {...props} disabled onClick={action('clicked')}>
           Click me
         </Button>
       ))
     )
 
     .add(
-      'disabled call to action with icon',
+      'disabled call to action',
       withMarkdownNotes(`
 # Button call to action
 
@@ -168,27 +135,20 @@ usage description here
 <Button
   disabled
   modifiers='call-to-action'
-  icon={<Icon name="chevron" />}
   onClick={this.onClick}
 >
   Click me
 </Button>
 ~~~
       `)(() => (
-        <Button
-          {...props}
-          icon={<Icon name="chevron" />}
-          disabled
-          modifiers="call-to-action"
-          onClick={action('clicked')}
-        >
+        <Button {...props} disabled modifiers="call-to-action" onClick={action('clicked')}>
           Click me
         </Button>
       ))
     )
 
     .add(
-      'full-width call to action with icon',
+      'full-width light-border',
       withMarkdownNotes(`
 # Button call to action
 
@@ -199,19 +159,13 @@ usage description here
 ~~~jsx
 <Button
   modifiers='full-width light-border'
-  icon={<Icon name="facebook" fill="#3B5998"/>}
   onClick={this.onClick}
 >
   Click me
 </Button>
 ~~~
       `)(() => (
-        <Button
-          {...props}
-          icon={<Icon name="facebook" fill="#3B5998"/>}
-          modifiers="light-border full-width"
-          onClick={action('clicked')}
-        >
+        <Button {...props} modifiers="light-border full-width" onClick={action('clicked')}>
           Click me
         </Button>
       ))

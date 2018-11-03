@@ -1,25 +1,18 @@
 import './button.scss';
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { getModifiersArray } from 'src/utils';
 
-export default function Button({ children, onClick, disabled, className, modifiers, type, icon }) {
+export default function Button({ children, onClick, disabled, className, modifiers, type }) {
   return (
     <button
-      className={cx(
-        'button',
-        getModifiersArray('button', modifiers),
-        {
-          'button--with-icon': !!icon,
-        },
-        className
-      )}
+      className={cx('button', getModifiersArray('button', modifiers), className)}
       onClick={onClick}
       type={type}
       disabled={disabled}
     >
-      <div className="button__text">{children}</div> {icon}
+      {children}
     </button>
   );
 }
@@ -29,7 +22,6 @@ Button.propTypes = {
   name: PropTypes.string,
   className: PropTypes.string,
   modifiers: PropTypes.string,
-  icon: PropTypes.any,
 };
 Button.defaultProps = {
   className: '',

@@ -1,49 +1,47 @@
-import "./icon.scss";
+import './icon.scss';
 import React from 'react';
 import PropTypes from 'prop-types';
+import cx from 'classnames';
+import { getModifiersArray } from 'src/utils';
 
-const Icon = ({
-		children,
-		name,
-		path,
-		width,
-		height,
-		fill
-}) => {
+const Icon = ({ children, name, width, height, fill, modifiers, className }) => {
+  const content = children || name;
 
-		const content = children || name;
+  if (!content) {
+    return null;
+  }
 
-		if (!(content || path)) {
-				return null;
-		}
+  let url = '#' + content.trim();
 
-		let url = path
-				? path
-				: '#' + content;
-		url = url.trim();
-
-		return (
-				<svg fill={fill} width={width} height={height} className="icon">
-						<use xlinkHref={url}/>
-				</svg>
-		);
+  return (
+    <svg
+      fill={fill}
+      width={width}
+      height={height}
+      className={cx('icon', getModifiersArray('icon', modifiers), className)}
+    >
+      <use xlinkHref={url} />
+    </svg>
+  );
 };
 
 Icon.propTypes = {
-		children: PropTypes.string,
-		name: PropTypes.string,
-		url: PropTypes.string,
-		width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-		height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-		fill: PropTypes.string
+  children: PropTypes.string,
+  name: PropTypes.string,
+  url: PropTypes.string,
+  width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  fill: PropTypes.string,
+  className: PropTypes.string,
+  modifiers: PropTypes.string,
 };
 
 Icon.defaultProps = {
-		name: 'chevron',
-		width: null,
-		height: null,
-    fill: 'currentColor',
-    color: null,
+  name: 'chevron',
+  width: null,
+  height: null,
+  fill: 'currentColor',
+  color: null,
 };
 
 export default Icon;

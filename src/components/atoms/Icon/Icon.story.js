@@ -96,20 +96,7 @@ or
       withMarkdownNotes(`
       `)(() => <AllIcons />)
     )
-    .add(
-      'icon path',
-      withMarkdownNotes(`
-# Icon arrow
 
-usage description here
-
-## React
-
-~~~jsx
-<Icon path='/icons.svg#chevron' />
-~~~
-      `)(() => <Icon {...props} path="/icons.svg#chevron" />)
-    )
     .add(
       'facebook',
       withMarkdownNotes(`

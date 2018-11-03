@@ -17,7 +17,7 @@ module.exports = (env = {}, argv = {}) => {
 
   console.log('***', isProd ? 'prod' : 'dev', '***');
 
-  let prodEntry = './src/production-entry';
+  let prodEntry = './src/build-library';
   let devEntry = './src/RenderDevelopment';
 
   let config = {

@@ -16,7 +16,7 @@
     background: rgba(gray, 0.1);
   }
 
-  &--with-icon {
+  &--center-center {
     display: flex;
     display: inline-flex;
     justify-content: center;
@@ -28,11 +28,23 @@
     color: gray;
   }
 
-  &--call-to-action {
+  &--call-to-action,
+  &--cta {
     background-color: $color-primary-orange;
     color: white;
     &:hover:not([disabled]) {
       background: $color-primary-hover;
+    }
+    &[disabled] {
+      color: #e2e2e2;
+    }
+  }
+
+  &--action {
+    background-color: $color-action-blue;
+    color: $color-group-blue;
+    &:hover:not([disabled]) {
+      background: $color-action-hover;
     }
     &[disabled] {
       color: #e2e2e2;
