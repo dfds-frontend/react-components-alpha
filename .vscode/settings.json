@@ -1,11 +1,15 @@
 {
   "prettier.tabWidth": 2,
   "prettier.useTabs": false,
+  "prettier.disableLanguages": ["js"],
+  "prettier.eslintIntegration": true,
+  "prettier.stylelintIntegration": true,
+
   "editor.formatOnSave": true,
   "[javascript]": {
     "editor.formatOnSave": false
   },
+
   "eslint.autoFixOnSave": true,
-  "eslint.alwaysShowStatus": true,
-  "prettier.disableLanguages": ["js"]
+  "eslint.alwaysShowStatus": true
 }
