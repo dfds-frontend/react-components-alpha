@@ -1,5 +1,7 @@
 # DFDS ReactJS components
 
+Unofficial library for DFDS
+
 ## methodology and strategy
 
 - Semantic HTML
