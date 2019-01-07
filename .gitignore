@@ -64,3 +64,4 @@ dist/
 .out/
 .DS_Store
 .cache/
+.build_cache/

@@ -26,21 +26,20 @@ module.exports = (env = {}, argv = {}) => {
       //minimize: false, // is default true in prod mode
 
       minimizer: [
-        isProd &&
-          new UglifyJsPlugin({
-            uglifyOptions: {
-              compress: {
-                drop_console: true,
-              },
-              output: {
-                comments: false,
-              },
+        isProd && new UglifyJsPlugin({
+          uglifyOptions: {
+            compress: {
+              drop_console: true
             },
-            cache: true,
-            parallel: true,
-            sourceMap: true,
-            extractComments: true,
-          }),
+            output: {
+              comments: false
+            }
+          },
+          cache: true,
+          parallel: true,
+          sourceMap: true,
+          extractComments: true
+        }),
         isProd && new OptimizeCSSAssetsPlugin({}),
       ].filter(Boolean),
 
