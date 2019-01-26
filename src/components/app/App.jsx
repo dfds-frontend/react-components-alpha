@@ -4,7 +4,7 @@ import './app.scss';
 import React, { Component } from 'react';
 import { AppContext } from 'src/contexts';
 import { appReducer } from 'src/reducers';
-import { HomePage } from 'components/pages';
+import { HomePage, TempPage } from 'components/pages';
 
 // const isDevelopmentEnvironment = process.env.NODE_ENV === 'development';
 // const isProductionEnvironment = process.env.NODE_ENV === 'production';
@@ -42,7 +42,7 @@ export default class App extends Component {
     return (
       <div className="app">
         <AppContext.Provider value={this.state}>
-          <HomePage />
+          <TempPage />
         </AppContext.Provider>
       </div>
     );
