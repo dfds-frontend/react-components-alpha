@@ -14,7 +14,6 @@ export default function CheckboxStory() {
 
   storiesOf('Checkboxes', module)
     .addDecorator(backgrounds)
-
     .add(
       'default',
       withMarkdownNotes(`
@@ -25,14 +24,37 @@ usage description here
 ## React
 
 ~~~jsx
-<Checkbox onClick={onClick}>
-  Click me
+<Checkbox
+    onChange={this.state.onChange}
+    required
+    checked={this.state.isChecked}
+    name={'my-checkbox'}
+    hasError={false || true}
+  >
+  click me
 </Checkbox>
 ~~~
       `)(() => (
-        <Checkbox {...props} onClick={action('clicked')}>
-          Click me
-        </Checkbox>
+        <Component
+          initialState={{
+            isChecked: false,
+          }}
+        >
+          {({ setState, state }) => (
+            <Checkbox
+              onChange={() =>
+                setState(s => ({
+                  isChecked: !s.isChecked,
+                }))
+              }
+              required
+              checked={state.isChecked}
+              name={'my-checkbox'}
+            >
+              click me
+            </Checkbox>
+          )}
+        </Component>
       ))
     );
 }

@@ -12,6 +12,7 @@ import IconStory from 'components/atoms/Icon/Icon.story';
 import TextStory from 'components/atoms/Text/Text.story';
 import LinkStory from 'components/atoms/Link/Link.story';
 import ButtonStory from 'components/molecules/Button/Button.story';
+import CheckboxStory from 'components/molecules/Checkbox/Checkbox.story';
 
 // for github pages
 loadIcons({ path: 'https://unpkg.com/@dfds-frontend/react-components/dist/icons.min.svg' });
@@ -23,3 +24,4 @@ IconStory();
 TextStory();
 LinkStory();
 ButtonStory();
+CheckboxStory();
