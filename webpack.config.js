@@ -127,11 +127,6 @@ module.exports = (env = {}, argv = {}) => {
             {
               loader: 'css-loader',
               options: {
-                minimize:
-                  isProd ||
-                  {
-                    /* CSSNano Options */
-                  },
               },
             },
             {
