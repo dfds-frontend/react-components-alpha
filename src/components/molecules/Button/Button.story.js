@@ -25,7 +25,7 @@ usage description here
 ## React
 
 ~~~jsx
-<Button onClick={this.onClick}>
+<Button onClick={onClick}>
   Click me
 </Button>
 ~~~
