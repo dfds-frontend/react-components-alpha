@@ -8,9 +8,9 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const webpack = require('webpack');
-const package = require('./package.json');
+//const package = require('./package.json');
 
-const IsWebpackDevServer = /webpack-dev-server/.test(process.env.npm_lifecycle_script);
+//const IsWebpackDevServer = /webpack-dev-server/.test(process.env.npm_lifecycle_script);
 
 module.exports = (env = {}, argv = {}) => {
   const isProd = argv.mode === 'production';
@@ -26,20 +26,21 @@ module.exports = (env = {}, argv = {}) => {
       //minimize: false, // is default true in prod mode
 
       minimizer: [
-        isProd && new UglifyJsPlugin({
-          uglifyOptions: {
-            compress: {
-              drop_console: true
+        isProd &&
+          new UglifyJsPlugin({
+            uglifyOptions: {
+              compress: {
+                drop_console: true,
+              },
+              output: {
+                comments: false,
+              },
             },
-            output: {
-              comments: false
-            }
-          },
-          cache: true,
-          parallel: true,
-          sourceMap: true,
-          extractComments: true
-        }),
+            cache: true,
+            parallel: true,
+            sourceMap: true,
+            extractComments: true,
+          }),
         isProd && new OptimizeCSSAssetsPlugin({}),
       ].filter(Boolean),
 
@@ -126,8 +127,7 @@ module.exports = (env = {}, argv = {}) => {
             },
             {
               loader: 'css-loader',
-              options: {
-              },
+              options: {},
             },
             {
               loader: 'postcss-loader',
