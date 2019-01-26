@@ -18,7 +18,7 @@ export default function Checkbox({
   mod,
 }) {
   return (
-    <label
+    <div
       className={cx(
         'checkbox',
         {
@@ -28,24 +28,21 @@ export default function Checkbox({
         className
       )}
     >
-      <input
-        type="checkbox"
-        className="checkbox__input"
-        name={name}
-        required={required}
-        checked={checked}
-        onChange={onChange}
-        disabled={disabled}
-      />
-      <i className={cx('checkbox__bg', { 'checkbox__bg--checked': checked })} />
-      <Icon
-        className={cx('checkbox__icon', { 'checkbox__icon--checked': checked })}
-        height="20"
-        width="20"
-        name="checkmark"
-      />
-      <p className="checkbox__text">{children}</p>
-    </label>
+      <label className="checkbox__label">
+        <input
+          type="checkbox"
+          className="checkbox__input"
+          name={name}
+          required={required}
+          checked={checked}
+          onChange={onChange}
+          disabled={disabled}
+        />
+        <i className="checkbox__bg" />
+        <Icon className="checkbox__icon" height="20" width="20" name="checkmark" />
+        <p className="checkbox__text">{children}</p>
+      </label>
+    </div>
   );
 }
 Checkbox.propTypes = {};

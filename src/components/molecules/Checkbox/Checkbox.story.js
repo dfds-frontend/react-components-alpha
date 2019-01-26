@@ -25,7 +25,7 @@ usage description here
 
 ~~~jsx
 <Checkbox
-    onChange={this.state.onChange}
+    onChange={this.onChange}
     required
     checked={this.state.isChecked}
     name={'my-checkbox'}
