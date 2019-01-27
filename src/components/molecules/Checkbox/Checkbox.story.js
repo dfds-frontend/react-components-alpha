@@ -8,10 +8,6 @@ import { backgrounds } from 'root/stories/addon-backgrounds';
 import Component from '@reach/component-component';
 
 export default function CheckboxStory() {
-  const props = {
-    name: 'checkbox',
-  };
-
   storiesOf('Checkboxes', module)
     .addDecorator(backgrounds)
     .add(
@@ -30,6 +26,7 @@ usage description here
     checked={this.state.isChecked}
     name={'my-checkbox'}
     hasError={false || true}
+    errorMessage="You must check it!"
   >
   click me
 </Checkbox>

@@ -78,5 +78,10 @@
     display: inline-block;
     margin: 0;
     text-align: left;
-	}
+  }
+  
+  &__error-message {
+    color: $color-no-red;    
+    margin: .4rem 0 1rem;
+  }
 }

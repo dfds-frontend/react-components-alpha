@@ -23,7 +23,24 @@ export default class TempPage extends React.Component {
         <Checkbox onChange={this.onChange} required checked={this.state.isChecked} name={'my-checkbox-2'}>
           click me
         </Checkbox>
-        <Checkbox hasError onChange={() => {}} required checked={false} name={'my-checkbox-3'}>
+        <Checkbox
+          hasError
+          errorMessage="You must check it"
+          onChange={() => {}}
+          required
+          checked={false}
+          name={'my-checkbox-3'}
+        >
+          click me
+        </Checkbox>
+        <Checkbox
+          hasError
+          errorMessage="You must check it!"
+          onChange={() => {}}
+          required
+          checked={false}
+          name={'my-checkbox-3'}
+        >
           click me
         </Checkbox>
       </div>
