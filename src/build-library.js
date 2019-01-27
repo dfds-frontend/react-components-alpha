@@ -8,5 +8,6 @@ import Text from 'components/atoms/Text/Text';
 import Link from 'components/atoms/Link/Link';
 import Button from 'components/molecules/Button/Button';
 import Checkbox from 'components/molecules/Checkbox/Checkbox';
+import RadioButton from 'components/molecules/RadioButton/RadioButton';
 
-export { loadIcons, Icon, DataLoader, Text, Link, Button, Checkbox };
+export { loadIcons, Icon, DataLoader, Text, Link, Button, Checkbox, RadioButton };
