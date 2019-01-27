@@ -7,22 +7,44 @@
     user-select: none;
   }
 
+  &__icon {
+    display: block;
+    opacity: 0;
+    transition: transform ease 200ms, opacity ease 200ms;
+    transform: scale(.5);
+    position: absolute;
+    left: 2px;
+    top: 5px;
+    fill: $color-inactive-grey;
+  }
+  
+  &__bg {
+    display: block;
+    width: 2.4rem;
+    height: 2.4rem;
+    border: 2px solid $color-inactive-grey;
+    border-radius: 2px;
+    position: absolute;
+    left: 0;
+    top: 3px;
+  } 
+  
   &__label {
     display: inline-block;
     position: relative;
     cursor: default;
 
     &:hover .checkbox__bg {
-      @extend .checkbox__bg--hover;
+      border-color: $color-action-hover;
     }
     &:hover .checkbox__icon {
-      @extend .checkbox__icon--hover;
+      fill: $color-action-hover;
     }
   }
 
 	&--error {
 		.checkbox__bg {
-			@extend .checkbox__bg--error;
+			border-color: $color-no-red;
 		}
 	}
 
@@ -34,17 +56,19 @@
     overflow: hidden;
 
     &:checked ~ .checkbox__bg {
-			@extend .checkbox__bg--checked;
+      border-color: $color-action-blue;
 		}
 		&:checked ~ .checkbox__icon {
-			@extend .checkbox__icon--checked;
+      opacity: 1;
+      transform: scale(1);
+      fill: $color-action-blue;
 		}
 
 		&:focus ~ .checkbox__bg {
-			@extend .checkbox__bg--focus;
+      border-color: $color-action-hover;
 		}
 		&:focus ~ .checkbox__icon {
-			@extend .checkbox__icon--focus;
+      fill: $color-action-hover;
 		}
 	}
 
@@ -56,50 +80,3 @@
     text-align: left;
 	}
 }
-
-.checkbox__icon {
-  display: block;
-  opacity: 0;
-  transition: transform ease 200ms, opacity ease 200ms;
-  transform: scale(.5);
-  position: absolute;
-  left: 2px;
-  top: 5px;
-  fill: $color-inactive-grey;
-
-  &--hover {
-    fill: $color-action-hover;
-  }
-  &--checked {
-    opacity: 1;
-    transform: scale(1);
-    fill: $color-action-blue;
-  }
-  &--focus {
-    fill: $color-action-hover;
-  }
-}
-
-.checkbox__bg {
-  display: block;
-  width: 2.4rem;
-  height: 2.4rem;
-  border: 2px solid $color-inactive-grey;
-  border-radius: 2px;
-  position: absolute;
-  left: 0;
-  top: 3px;
-
-  &--error {
-    border-color: $color-no-red;
-  }
-  &--hover {
-    border-color: $color-action-hover;
-  }
-  &--checked {
-    border-color: $color-action-blue;
-  }
-  &--focus {
-    border-color: $color-action-hover;
-  }
-} 
