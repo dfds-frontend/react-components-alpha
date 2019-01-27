@@ -3,9 +3,9 @@
 	position: relative;
 	cursor: default;
 
-	// @include mobile {
-	// 	user-select: none;
-	// }
+  @media (pointer: coarse) { 
+    user-select: none;
+  }
 
   &__label {
     display: inline-block;
