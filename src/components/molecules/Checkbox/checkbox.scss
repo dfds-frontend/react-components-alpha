@@ -47,51 +47,7 @@
 			@extend .checkbox__icon--focus;
 		}
 	}
-	&__bg {
-		display: block;
-		width: 2.4rem;
-		height: 2.4rem;
-		border: 2px solid $color-inactive-grey;
-		border-radius: 2px;
-		position: absolute;
-		left: 0;
-		top: 3px;
 
-		&--error {
-			border-color: $color-no-red;
-		}
-		&--hover {
-			border-color: $color-action-hover;
-		}
-		&--checked {
-			border-color: $color-action-blue;
-		}
-		&--focus {
-			border-color: $color-action-hover;
-		}
-	}
-	&__icon {
-		display: block;
-		opacity: 0;
-		transition: transform ease 200ms, opacity ease 200ms;
-		transform: scale(.5);
-		position: absolute;
-		left: 2px;
-		top: 5px;
-		fill: $color-inactive-grey;
-
-		&--hover {
-			fill: $color-action-hover;
-		}
-		&--checked {
-			opacity: 1;
-			transform: scale(1);
-			fill: $color-action-blue;
-		}
-		&--focus {
-			fill: $color-action-hover;
-		}
-	}
 	&__text {
     font-size: 1.6rem;
     padding: 6px 0 6px 35px;
@@ -100,3 +56,50 @@
     text-align: left;
 	}
 }
+
+.checkbox__icon {
+  display: block;
+  opacity: 0;
+  transition: transform ease 200ms, opacity ease 200ms;
+  transform: scale(.5);
+  position: absolute;
+  left: 2px;
+  top: 5px;
+  fill: $color-inactive-grey;
+
+  &--hover {
+    fill: $color-action-hover;
+  }
+  &--checked {
+    opacity: 1;
+    transform: scale(1);
+    fill: $color-action-blue;
+  }
+  &--focus {
+    fill: $color-action-hover;
+  }
+}
+
+.checkbox__bg {
+  display: block;
+  width: 2.4rem;
+  height: 2.4rem;
+  border: 2px solid $color-inactive-grey;
+  border-radius: 2px;
+  position: absolute;
+  left: 0;
+  top: 3px;
+
+  &--error {
+    border-color: $color-no-red;
+  }
+  &--hover {
+    border-color: $color-action-hover;
+  }
+  &--checked {
+    border-color: $color-action-blue;
+  }
+  &--focus {
+    border-color: $color-action-hover;
+  }
+} 
