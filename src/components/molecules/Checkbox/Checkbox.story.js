@@ -57,24 +57,24 @@ usage description here
     .add(
       'with error',
       withMarkdownNotes(`
-      # Checkbox error
+# Checkbox error
 
-      usage description here
-      
-      ## React
-      
-      ~~~jsx
-      <Checkbox
-          onChange={this.onChange}
-          required
-          checked={this.state.isChecked}
-          name={'my-checkbox'}
-          hasError={true}
-          errorMessage="You must check it!"
-        >
-        click me
-      </Checkbox>
-      ~~~
+usage description here
+
+## React
+
+~~~jsx
+<Checkbox
+    onChange={this.onChange}
+    required
+    checked={this.state.isChecked}
+    name={'my-checkbox'}
+    hasError={true}
+    errorMessage="You must check it!"
+  >
+  click me
+</Checkbox>
+~~~
       `)(() => (
         <Component
           initialState={{
