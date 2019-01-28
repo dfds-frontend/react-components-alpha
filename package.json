@@ -1,6 +1,6 @@
 {
   "name": "@dfds-frontend/react-components",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "DFDS ReactJS component",
   "main": "dist/dfds.js",
   "scripts": {
