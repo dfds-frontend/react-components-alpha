@@ -43,7 +43,7 @@ export default function Checkbox({
         <Icon className="checkbox__icon" height="20" width="20" name="checkmark" />
         <p className="checkbox__text">{children}</p>
       </label>
-      {hasError && <p className="checkbox__error-message">{errorMessage}</p>}
+      {hasError && errorMessage && <p className="checkbox__error-message">{errorMessage}</p>}
     </div>
   );
 }
