@@ -13,6 +13,7 @@ import TextStory from 'components/atoms/Text/Text.story';
 import LinkStory from 'components/atoms/Link/Link.story';
 import ButtonStory from 'components/molecules/Button/Button.story';
 import CheckboxStory from 'components/molecules/Checkbox/Checkbox.story';
+import RadioButtonStory from 'components/molecules/RadioButton/RadioButton.story';
 
 // for github pages
 loadIcons({ path: 'https://unpkg.com/@dfds-frontend/react-components/dist/icons.min.svg' });
@@ -25,3 +26,4 @@ TextStory();
 LinkStory();
 ButtonStory();
 CheckboxStory();
+RadioButtonStory();

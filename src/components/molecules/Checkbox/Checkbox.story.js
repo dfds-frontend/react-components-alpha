@@ -24,9 +24,7 @@ usage description here
     onChange={this.onChange}
     required
     checked={this.state.isChecked}
-    name={'my-checkbox'}
-    hasError={false || true}
-    errorMessage="You must check it!"
+    name={'checkbox-1'}
   >
   click me
 </Checkbox>
@@ -46,10 +44,58 @@ usage description here
               }
               required
               checked={state.isChecked}
-              name={'my-checkbox'}
+              name={'checkbox-1'}
             >
               click me
             </Checkbox>
+          )}
+        </Component>
+      ))
+    )
+
+
+    .add(
+      'with error',
+      withMarkdownNotes(`
+      # Checkbox error
+
+      usage description here
+      
+      ## React
+      
+      ~~~jsx
+      <Checkbox
+          onChange={this.onChange}
+          required
+          checked={this.state.isChecked}
+          name={'my-checkbox'}
+          hasError={true}
+          errorMessage="You must check it!"
+        >
+        click me
+      </Checkbox>
+      ~~~
+      `)(() => (
+        <Component
+          initialState={{
+            isChecked: false,
+          }}
+        >
+          {({ setState, state }) => (
+            <Checkbox
+              onChange={() =>
+                setState(s => ({
+                  isChecked: !s.isChecked,
+                }))
+              }
+              required
+              checked={state.isChecked}
+              name={'checkbox-2'}
+              hasError={!state.isChecked}
+              errorMessage="You must check it!"
+            >
+              click me
+          </Checkbox>
           )}
         </Component>
       ))

@@ -1,3 +1,82 @@
 .radio-button {
-	
+    position: relative;
+
+	&--horizontal {
+		display: inline-block;
+		+ .radio-button {
+			margin-left: 2rem;
+		}
+	}
+
+    &__label {
+        padding: 0;
+        position: relative;
+        display: inline-block;
+        cursor: default;
+
+        @media (pointer: coarse) { 
+            user-select: none;
+        }
+        
+        &:hover .radio-button__bg {
+            border-color: $color-action-hover;
+        }
+        &:hover .radio-button__dot {
+            background-color: $color-action-hover;
+        }
+    }
+
+	&__input {
+		position: absolute;
+    	width: 0;
+    	height: 0;
+    	opacity: 0;
+		overflow: hidden;
+
+		&:checked ~  .radio-button__bg {
+			border-color: $color-action-blue;
+		}
+		&:checked ~  .radio-button__dot {
+			opacity: 1;
+			transform: scale(1);
+			background-color: $color-action-blue;
+		}
+		&:focus ~ .radio-button__bg {
+			border-color: $color-action-hover;
+		}
+		&:focus ~ .radio-button__dot {
+            background-color: $color-action-hover;
+		}
+    }
+    
+	&__bg {
+		display: block;
+		width: 27px;
+		height: 27px;
+		border: 2px solid $color-inactive-grey;
+		border-radius: 100%;
+		position: absolute;
+		left: 0;
+		top: 3px;
+    }
+    
+	&__dot {
+		display: block;
+		width: 17px;
+		height: 17px;
+		background-color: $color-inactive-grey;
+		position: absolute;
+		left: 5px;
+		top: 8px;
+		border-radius: 100%;
+		transition: transform ease 200ms, opacity ease 200ms;
+		opacity: 0;
+		transform: scale(.5);
+    }
+    
+	&__text {
+		padding: 6px 0 6px 35px;
+		display: block;
+		font-size: 1.6rem;
+	}
 }

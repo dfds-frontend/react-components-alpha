@@ -3,22 +3,25 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { getModifiersArray } from 'src/utils';
-import { Icon } from 'components';
 
-export default function RadioButton({
-  name,
-  children,
-  onChange,
-  checked,
-  disabled,
-  required,
-  hasError,
-  className,
-  modifiers,
-  mod,
-}) {
+export default function RadioButton({ name, children, onChange, checked, disabled, value, className, modifiers, mod }) {
   return (
-    <div className={cx('radio-button', getModifiersArray('radio-button', mod || modifiers), className)}>{children}</div>
+    <div className={cx('radio-button', getModifiersArray('radio-button', mod || modifiers), className)}>
+      <label className="radio-button__label">
+        <input
+          type="radio"
+          className="radio-button__input"
+          name={name}
+          value={value}
+          checked={checked}
+          onChange={onChange}
+          disabled={disabled}
+        />
+        <i className="radio-button__bg" />
+        <i className="radio-button__dot" />
+        <div className="radio-button__text">{children}</div>
+      </label>
+    </div>
   );
 }
 RadioButton.propTypes = {};

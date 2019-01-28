@@ -25,11 +25,10 @@ usage description here
 
 ~~~jsx
 <RadioButton
-    onChange={this.onChange}
-    required
-    checked={this.state.isChecked}
-    name={'my-checkbox'}
-    hasError={false || true}
+    onChange={() => this.onChange(1)}
+    checked={this.state.index === 1}
+    name='my-checkbox'
+    mod='horizontal'
   >
   click me
 </RadioButton>
@@ -37,22 +36,28 @@ usage description here
       `)(() => (
         <Component
           initialState={{
-            isChecked: false,
+            index: 0,
           }}
         >
           {({ setState, state }) => (
-            <RadioButton
-              onChange={() =>
-                setState(s => ({
-                  isChecked: !s.isChecked,
-                }))
-              }
-              required
-              checked={state.isChecked}
-              name={'my-checkbox'}
-            >
-              click me
+            <div>
+              <RadioButton
+                onChange={() => setState({ index: 1 })}
+                checked={state.index === 1}
+                name='my-radio-button'
+                mod='horizontal'
+              >
+                click me
             </RadioButton>
+              <RadioButton
+                onChange={() => setState({ index: 2 })}
+                checked={state.index === 2}
+                name='my-radio-button'
+                mod='horizontal'
+              >
+                click me
+            </RadioButton>
+            </div>
           )}
         </Component>
       ))
