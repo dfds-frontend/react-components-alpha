@@ -11,12 +11,7 @@ export default function Link({ href, children, target, modifiers, mod, className
   }
 
   return (
-    <a
-      href={href}
-      target={target}
-      rel={rel}
-      className={cx('link', getModifiersArray('link', mod || modifiers), className)}
-    >
+    <a href={href} target={target} rel={rel} className={cx(getModifiersArray('link', mod || modifiers), className)}>
       {children}
     </a>
   );

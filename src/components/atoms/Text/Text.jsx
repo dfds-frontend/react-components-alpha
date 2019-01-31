@@ -5,7 +5,7 @@ import cx from 'classnames';
 import { getModifiersArray } from 'src/utils';
 
 export default function Text({ children, modifiers, mod, className }) {
-  return <span className={cx('text', getModifiersArray('text', mod || modifiers), className)}>{children}</span>;
+  return <span className={cx(getModifiersArray('text', mod || modifiers), className)}>{children}</span>;
 }
 
 Text.propTypes = {

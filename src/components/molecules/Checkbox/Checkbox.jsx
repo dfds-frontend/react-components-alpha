@@ -2,8 +2,12 @@ import './checkbox.scss';
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { getModifiersArray } from 'src/utils';
+import { getModifiersArray, E, M } from 'src/utils';
 import { Icon } from 'components';
+
+const BLOCK = 'checkbox';
+const e = element => E(BLOCK, element);
+const m = element => M(BLOCK, element);
 
 export default function Checkbox({
   name,
@@ -19,31 +23,22 @@ export default function Checkbox({
   mod,
 }) {
   return (
-    <div
-      className={cx(
-        'checkbox',
-        {
-          'checkbox--error': hasError,
-        },
-        getModifiersArray('checkbox', mod || modifiers),
-        className
-      )}
-    >
-      <label className="checkbox__label">
+    <div className={cx({ [m('error')]: hasError }, getModifiersArray('checkbox', mod || modifiers), className)}>
+      <label className={e('label')}>
         <input
           type="checkbox"
-          className="checkbox__input"
+          className={e('input')}
           name={name}
           required={required}
           checked={checked}
           onChange={onChange}
           disabled={disabled}
         />
-        <i className="checkbox__bg" />
-        <Icon className="checkbox__icon" height="20" width="20" name="checkmark" />
-        <p className="checkbox__text">{children}</p>
+        <i className={e('bg')} />
+        <Icon className={e('icon')} height="20" width="20" name="checkmark" />
+        <p className={e('text')}>{children}</p>
       </label>
-      {hasError && errorMessage && <p className="checkbox__error-message">{errorMessage}</p>}
+      {hasError && errorMessage && <p className={e('error-message')}>{errorMessage}</p>}
     </div>
   );
 }

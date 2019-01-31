@@ -16,7 +16,7 @@ const Icon = ({ children, name, width, height, fill, modifiers, mod, className }
       fill={fill}
       width={width}
       height={height}
-      className={cx('icon', getModifiersArray('icon', mod || modifiers), className)}
+      className={cx(getModifiersArray('icon', mod || modifiers), className)}
     >
       <use xlinkHref={'#' + content.trim()} />
     </svg>

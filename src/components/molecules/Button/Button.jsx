@@ -7,7 +7,7 @@ import { getModifiersArray } from 'src/utils';
 export default function Button({ children, onClick, disabled, className, modifiers, mod, type }) {
   return (
     <button
-      className={cx('button', getModifiersArray('button', mod || modifiers), className)}
+      className={cx(getModifiersArray('button', mod || modifiers), className)}
       onClick={onClick}
       type={type}
       disabled={disabled}
