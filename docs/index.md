@@ -11,7 +11,7 @@ Include the following to your document
 
 ```html
 <head>
-  <link rel="stylesheet" type="text/css" href="https://unpkg.com/@dfds-frontend/react-components/dist/dfds.css">
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/@dfds-frontend/react-components/dist/dfds.css" />
 </head>
 <body>
   <script src="https://unpkg.com/@dfds-frontend/react-components/dist/dfds.js"></script>
@@ -22,11 +22,10 @@ Either copy the content on `https://unpkg.com/@dfds-frontend/react-components/di
 
 ```html
 <script>
-  window.Dfds.loadIcons(
-    {
-      path: 'https://unpkg.com/@dfds-frontend/react-components/dist/icons.min.svg',
-      callback: undefined /* optional: add a callback */
-    })
+  window.Dfds.loadIcons({
+    path: 'https://unpkg.com/@dfds-frontend/react-components/dist/icons.min.svg',
+    callback: undefined /* optional: add a callback */
+  });
 </script>
 ```
 
@@ -41,7 +40,7 @@ const { Icon, Button } = window.Dfds;
 Install @dfds-frontend/react-components from NPM:
 
 ```bash
-npm i @dfds-frontend/react-components -S
+npm i -S @dfds-frontend/react-components
 ```
 
 Them import components from the package and use them
@@ -49,7 +48,7 @@ Them import components from the package and use them
 ```js
 import { Icon, Button } from '@dfds-frontend/react-components';
 
-<Button modifiers="call-to-action" icon="chevron" onClick={event => log(event.target)}>
+<Button modifiers="call-to-action" onClick={event => console.log(event.target)}>
   click
 </Button>;
 ```
@@ -58,7 +57,7 @@ Add the css and svg icons to the page.
 
 ```html
 <head>
-  <link rel="stylesheet" type="text/css" href="https://unpkg.com/@dfds-frontend/react-components/dist/dfds.css">
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/@dfds-frontend/react-components/dist/dfds.css" />
   <!-- or use the file from node_modules/@dfds-frontend/react-components folder -->
 </head>
 ```

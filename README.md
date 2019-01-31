@@ -43,12 +43,8 @@ let IconAndButtonExample = () => (
   <div>
     <Icon name="triangle" fill="red" />
 
-    <Button
-      modifiers="call-to-action full-width"
-      icon={<Icon name="chevron" fill="#ed8b00" className="button__icon" />}
-      onClick={event => {}}
-    >
-      Click me
+    <Button modifiers="call-to-action full-width" onClick={this.onCallToActionClick}>
+      Click me <Icon name="chevron" fill="#ed8b00" />
     </Button>
   </div>
 );
@@ -64,6 +60,22 @@ use
 - https://unpkg.com/@dfds-frontend/react-components/dist/dfds.css
 - https://unpkg.com/@dfds-frontend/react-components/dist/icons.min.svg
 - https://unpkg.com/@dfds-frontend/react-components/dist/fonts/font.css (fonts only)
+
+## npm
+
+Install @dfds-frontend/react-components from NPM:
+
+```bash
+npm i -S @dfds-frontend/react-components
+```
+
+Them import components from the package and use them
+
+```js
+import { Button } from '@dfds-frontend/react-components';
+
+<Button onClick={event => console.log(event.target)}>click</Button>;
+```
 
 ## supported browsers
 
