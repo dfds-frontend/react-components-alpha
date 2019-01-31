@@ -20,7 +20,7 @@ function updatePageTitle(title) {
 }
 
 function getModifiersArray(prefix, modifiers) {
-  if (!modifiers) return 'prefix';
+  if (!modifiers) return prefix;
 
   const modifiersArray = modifiers
     .trim()
