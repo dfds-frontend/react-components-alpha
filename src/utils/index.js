@@ -27,15 +27,25 @@ function getModifiersArray(prefix, modifiers) {
     .split(' ')
     .map(m => m.trim())
     .filter(Boolean);
-  return [prefix].concat(modifiersArray.map(m => M(prefix, m)));
+  return [prefix].concat(modifiersArray.map(m => `${prefix}--${m}`));
 }
 
-function E(prefix, element) {
-  return `${prefix}__${element}`;
+function elementFactory(block) {
+  return element => `${block}__${element}`;
 }
 
-function M(prefix, element) {
-  return `${prefix}--${element}`;
+function modifierFactory(block) {
+  return modifier => `${block}--${modifier}`;
 }
 
-export { getJsonAsync, postJsonAsync, sleep, getUrl, updatePageTitle, getModifiersArray, getUrlParameter, E, M };
+export {
+  getJsonAsync,
+  postJsonAsync,
+  sleep,
+  getUrl,
+  updatePageTitle,
+  getModifiersArray,
+  getUrlParameter,
+  elementFactory,
+  modifierFactory,
+};

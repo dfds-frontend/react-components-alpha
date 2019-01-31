@@ -42,7 +42,7 @@ export default class App extends Component {
     return (
       <div className="app">
         <AppContext.Provider value={this.state}>
-          <TempPage />
+          <HomePage />
         </AppContext.Provider>
       </div>
     );
