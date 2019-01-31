@@ -7,7 +7,7 @@ import { Icon } from 'components';
 
 const BLOCK = 'checkbox';
 const e = element => E(BLOCK, element);
-const m = element => M(BLOCK, element);
+const m = modifier => M(BLOCK, modifier);
 
 export default function Checkbox({
   name,
