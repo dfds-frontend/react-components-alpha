@@ -24,7 +24,7 @@ usage description here
     onChange={this.onChange}
     required
     checked={this.state.isChecked}
-    name={'checkbox-1'}
+    name='checkbox-1'
   >
   click me
 </Checkbox>
@@ -44,7 +44,7 @@ usage description here
               }
               required
               checked={state.isChecked}
-              name={'checkbox-1'}
+              name="checkbox-1"
             >
               click me
             </Checkbox>
@@ -52,7 +52,6 @@ usage description here
         </Component>
       ))
     )
-
 
     .add(
       'with error',
@@ -68,8 +67,8 @@ usage description here
     onChange={this.onChange}
     required
     checked={this.state.isChecked}
-    name={'my-checkbox'}
-    hasError={true}
+    name="my-checkbox"
+    hasError={!this.state.isChecked}
     errorMessage="You must check it!"
   >
   click me
@@ -90,12 +89,12 @@ usage description here
               }
               required
               checked={state.isChecked}
-              name={'checkbox-2'}
+              name="checkbox-2"
               hasError={!state.isChecked}
               errorMessage="You must check it!"
             >
               click me
-          </Checkbox>
+            </Checkbox>
           )}
         </Component>
       ))
