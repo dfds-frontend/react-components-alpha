@@ -204,7 +204,7 @@ module.exports = (env = {}, argv = {}) => {
           [
             {
               from: 'fonts/*.*',
-              to: 'fonts/',
+              to: '',
             },
             {
               from: 'src/icon-system/icons.min.svg',
