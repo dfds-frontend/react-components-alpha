@@ -81,7 +81,8 @@ usage description here
 ## React
 
 ~~~jsx
-<Icon name='chevron' />
+<Icon name='chevron' 
+   fill='purple' width='100' height='100'  />
 ~~~
 
 or
