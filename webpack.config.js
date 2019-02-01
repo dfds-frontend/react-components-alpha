@@ -203,8 +203,8 @@ module.exports = (env = {}, argv = {}) => {
         new CopyWebpackPlugin(
           [
             {
-              from: 'fonts/font.css',
-              to: 'fonts/font.css',
+              from: 'fonts/*.*',
+              to: 'fonts/',
             },
             {
               from: 'src/icon-system/icons.min.svg',
