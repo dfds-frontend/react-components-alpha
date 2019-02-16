@@ -13,12 +13,27 @@ const webpack = require('webpack');
 //const IsWebpackDevServer = /webpack-dev-server/.test(process.env.npm_lifecycle_script);
 
 module.exports = (env = {}, argv = {}) => {
-  const isProd = argv.mode === 'production';
+  const PRODUCTION = 'production';
+  const DEVELOPMENT = 'development';
+  const VALIDATE = 'validate';
 
-  console.log('***', isProd ? 'prod' : 'dev', '***');
+  const entries = {
+    [PRODUCTION]: './src/build-entry',
+    [DEVELOPMENT]: './src/development-entry',
+    [VALIDATE]: './src/validate-entry',
+  };
 
-  let prodEntry = './src/build-library';
-  let devEntry = './src/RenderDevelopment';
+  let type;
+  if (env.VALIDATE) {
+    type = VALIDATE;
+  } else {
+    type = argv.mode === PRODUCTION ? PRODUCTION : DEVELOPMENT;
+  }
+
+  const isProd = argv.mode === PRODUCTION;
+  let entry = entries[type];
+
+  console.log('***', type, entry, '***');
 
   let config = {
     devtool: 'source-map',
@@ -50,7 +65,7 @@ module.exports = (env = {}, argv = {}) => {
       */
     },
     entry: {
-      dfds: isProd ? [prodEntry] : [devEntry],
+      dfds: entry,
       // ThirdPartyStylings:
       // ['./src/third-party-stylings/example-of-third-party-styling.scss'],
     },
