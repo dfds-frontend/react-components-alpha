@@ -1,5 +1,5 @@
 {
-  "name": "@dfds-frontend/react-components",
+  "name": "@dfds-frontend/react-components-alpha",
   "version": "0.0.16",
   "description": "DFDS ReactJS component",
   "main": "dist/dfds.js",
